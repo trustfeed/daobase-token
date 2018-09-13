@@ -33,7 +33,7 @@ contract DaobaseTokenFactory {
     uint256 _goal
   ) public {
 
-    require(_owners[1] == msg.sender, "sent from unexpected address");
+    require(_owners[0] == msg.sender, "sent from unexpected address");
 
     wallet = new DaobaseWallet(
       _owners,

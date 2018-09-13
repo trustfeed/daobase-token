@@ -18,6 +18,7 @@ contract('DaobaseTokenFactory', function (accounts) {
         let tokenFact = web3.eth.contract(DaobaseToken.abi);
         token = tokenFact.at(t);
 
+        console.log(token.balanceOf.call(crowdsaleAddr));
         return token.balanceOf.call(crowdsaleAddr);
       }).then(b => {
         console.log('crowdsale balance:', b.valueOf());
@@ -40,16 +41,5 @@ contract('DaobaseTokenFactory', function (accounts) {
         );
       })
       .catch(console.log);
-    //
-    //        return web3.eth.sendTransaction({
-    //          from: accounts[2],
-    //          to: crowdsale,
-    //          value: '1000',
-    //          gas: '1000000',
-    //          gasPrice: '1',
-    //        });
-    //      }).then(r => {
-    //    	console.log(r);
-    //      });
   });
 });
